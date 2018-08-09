@@ -28,10 +28,10 @@ func init() {
 	flag.StringVar(&mailDomain, "mail-domain", "", "set the mail domain")
 	flag.StringVar(&mailPubkey, "mail-pubkey", "", "set the mailgun pubkey")
 	flag.StringVar(&mailPrivkey, "mail-privkey", "", "set the mailgun privkey")
+	flag.Parse()
 }
 
 func main() {
-
 	mg := mailgun.NewMailgun(mailDomain, mailPrivkey, mailPubkey)
 
 	if mailTest {
