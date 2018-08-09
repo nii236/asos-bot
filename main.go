@@ -82,6 +82,15 @@ Item Link: https://www.asos.com/au/asos/asos-swing-coat-with-full-skirt-and-zip-
 From the ASOS Bot
 `
 
+					if !r.IsInStock {
+						subject = "ASOS coat no longer in stock"
+						body = `ASOS Item 7785575 Variant 7785646 is no longer in stock.
+Item Link: https://www.asos.com/au/asos/asos-swing-coat-with-full-skirt-and-zip-front/prd/7785575
+
+From the ASOS Bot
+`
+					}
+
 					err = sendMessage(mg, sender, subject, body, recipientSlice)
 					if err != nil {
 						fmt.Println(err)
